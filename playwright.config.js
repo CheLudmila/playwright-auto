@@ -1,4 +1,17 @@
 import { defineConfig } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+// Перевірка завантаження .env
+console.log('================================');
+console.log('BASE_URL:', process.env.BASE_URL);
+console.log('HTTP_USERNAME:', process.env.HTTP_USERNAME);
+console.log(
+  'HTTP_PASSWORD:',
+  process.env.HTTP_PASSWORD ? '*****' : undefined
+);
+console.log('================================');
 
 export default defineConfig({
   testDir: './tests',
@@ -10,11 +23,11 @@ export default defineConfig({
   reporter: [['html']],
 
   use: {
-    baseURL: 'https://qauto.forstudy.space',
+    baseURL: process.env.BASE_URL,
 
     httpCredentials: {
-      username: 'guest',
-      password: 'welcome2qauto',
+      username: process.env.HTTP_USERNAME,
+      password: process.env.HTTP_PASSWORD,
     },
 
     headless: false,
