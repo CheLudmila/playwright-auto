@@ -7,12 +7,15 @@ export default defineConfig({
 
   fullyParallel: true,
 
-  reporter: [
-    ['html'],
-  ],
+  reporter: [['html']],
 
   use: {
     baseURL: 'https://qauto.forstudy.space',
+
+    httpCredentials: {
+      username: 'guest',
+      password: 'welcome2qauto',
+    },
 
     headless: false,
 
@@ -28,4 +31,3 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 });
-
