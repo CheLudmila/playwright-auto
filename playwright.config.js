@@ -30,6 +30,11 @@ export default defineConfig({
       password: process.env.HTTP_PASSWORD,
     },
 
+    httpCredentials: {
+      username: 'guest',
+      password: 'welcome2qauto',
+    },
+
     headless: false,
 
     viewport: {
