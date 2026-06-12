@@ -14,6 +14,11 @@ export default defineConfig({
   use: {
     baseURL: 'https://qauto.forstudy.space',
 
+    httpCredentials: {
+      username: 'guest',
+      password: 'welcome2qauto',
+    },
+
     headless: false,
 
     viewport: {
@@ -28,4 +33,3 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 });
-
