@@ -30,11 +30,6 @@ export default defineConfig({
       password: process.env.HTTP_PASSWORD,
     },
 
-    httpCredentials: {
-      username: 'guest',
-      password: 'welcome2qauto',
-    },
-
     headless: false,
 
     viewport: {
@@ -48,4 +43,18 @@ export default defineConfig({
 
     trace: 'on-first-retry',
   },
+
+  projects: [
+    {
+      name: 'setup',
+      testMatch: /.*\.setup\.js/,
+    },
+    {
+      name: 'chromium',
+      dependencies: ['setup'],
+      use: {
+        storageState: 'storageState.json',
+      },
+    },
+  ],
 });
