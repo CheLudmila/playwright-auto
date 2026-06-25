@@ -30,7 +30,7 @@ export default defineConfig({
       password: process.env.HTTP_PASSWORD,
     },
 
-    headless: false,
+    headless: true,
 
     viewport: {
       width: 1280,
